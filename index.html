@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="modern-theme">
+    <div class="color-blob blob-one"></div>
+    <div class="color-blob blob-two"></div>
+    <div class="color-blob blob-three"></div>
+
+    <main class="page-shell">
+        <header class="page-header fade-in">
+            <p class="eyebrow">FYB Celebration</p>
+            <h1>Select Your Package</h1>
+            <p class="lede">Choose a curated experience that fits your style. The smoother the selection, the sooner
+                your celebration details get locked in.</p>
+        </header>
+
+        <section id="selection-section" class="card-panel fade-in">
+            <form id="item-form" class="modern-form">
+                <div class="input-pair">
+                    <label for="first-name">First Name
+                        <input type="text" id="first-name" placeholder="Teniola" required>
+                    </label>
+                    <label for="last-name">Last Name
+                        <input type="text" id="last-name" placeholder="Ademola" required>
+                    </label>
+                </div>
+
+                <div class="section-heading">
+                    <h2>Packages</h2>
+                    <p>Each package is handpicked to keep you photo-ready, with the perfect blend of essentials.</p>
+                </div>
+                <div class="option-grid">
+                    <label class="option-card">
+                        <input type="radio" name="package" value="Vintage" data-cost="29000">
+                        <div class="option-content">
+                            <div class="option-row">
+                                <span class="option-name">Vintage</span>
+                                <span class="option-price">₦29,000</span>
+                            </div>
+                            <p class="option-description">Classic accessories that never miss the vibe.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="package" value="Prestige" data-cost="60000">
+                        <div class="option-content">
+                            <div class="option-row">
+                                <span class="option-name">Prestige</span>
+                                <span class="option-price">₦60,000</span>
+                            </div>
+                            <p class="option-description">Level up with premium touches and standout details.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="package" value="Imperial" data-cost="89000">
+                        <div class="option-content">
+                            <div class="option-row">
+                                <span class="option-name">Imperial</span>
+                                <span class="option-price">₦89,000</span>
+                            </div>
+                            <p class="option-description">All-out luxury with everything covered.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="section-heading stack">
+                    <h2>Trad Wear <span class="tag">Required</span></h2>
+                    <p>Match the Aso-Ebi brief perfectly. Select the cut that suits you.</p>
+                </div>
+                <div class="option-grid two-column">
+                    <label class="option-card tight">
+                        <input type="radio" name="trad" value="Male" data-cost="15000">
+                        <div class="option-content">
+                            <div class="option-row">
+                                <span class="option-name">Male Fit</span>
+                                <span class="option-price">₦15,000</span>
+                            </div>
+                            <p class="option-description">Modern tailoring, crisp finishing.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card tight">
+                        <input type="radio" name="trad" value="Female" data-cost="10000">
+                        <div class="option-content">
+                            <div class="option-row">
+                                <span class="option-name">Female Fit</span>
+                                <span class="option-price">₦10,000</span>
+                            </div>
+                            <p class="option-description">Elegant lines with statement flair.</p>
+                        </div>
+                    </label>
+                </div>
+            </form>
+
+            <div class="helper-card">
+                <p>Prefer to handpick every detail? <a href="customize.html">Build a custom package instead →</a></p>
+            </div>
+
+            <button id="proceed-btn" class="fancy-btn">Review &amp; Proceed</button>
+        </section>
+
+        <section id="summary-section" class="card-panel pop-out" style="display: none;">
+            <h2>Your Selection</h2>
+            <p class="summary-subhead">Double-check details, save them for the team, then share immediately.</p>
+            <ul id="selected-items" class="selection-list"></ul>
+            <p id="total-cost" class="total-cost"></p>
+            <div class="button-grid">
+                <button id="save-btn" class="fancy-btn pill">Save Details</button>
+                <button id="share-btn" class="fancy-btn outline">Share with Financial Secretary</button>
+                <button id="back-btn" class="ghost-btn">Back to Selection</button>
+            </div>
+            <div id="save-feedback" class="save-feedback"></div>
+            <div id="share-feedback" class="save-feedback"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
