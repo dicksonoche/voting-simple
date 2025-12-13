@@ -1,8 +1,17 @@
 const items = [
-  { id: 'item1', name: 'Option A', cost: 10000, mandatory: false },
-  { id: 'item2', name: 'Option B', cost: 15000, mandatory: true },
-  { id: 'item3', name: 'Option C', cost: 20000, mandatory: false },
-  { id: 'item4', name: 'Option D', cost: 5000, mandatory: true }
+  { id: 'sash', name: 'Sash', cost: 5000, mandatory: true, description: 'Official OAU and Pharmacy sash for every Compounder.' },
+  { id: 'yearbook', name: 'Yearbook', cost: 2000, mandatory: true, description: 'Memory-filled book capturing our images, details, stories, quotes, and highlights.' },
+  { id: 'cultural-night', name: 'Cultural / Trad Night', cost: 10000, mandatory: true, description: 'Food, fashion, music, and vibes at the cultural night.' },
+  { id: 'class-project', name: 'Class Project', cost: 3000, mandatory: true, description: 'Collective impact project that represents Compound ’25.' },
+  { id: 'health-outreach', name: 'Health Outreach', cost: 2000, mandatory: true, description: 'Community health service and awareness beyond the classroom. Our very own Coporate Social Responsibility.' },
+  { id: 'alumni-brunch', name: 'Alumni Networking Brunch', cost: 4000, mandatory: false, description: 'Connect with alumni from various practice settings(Industry & Supply Chain, Community, Hospital, Regulatory, Academic & Research) to gain insights, mentorship, and opportunities. It also doubles as a Brunch.' },
+  { id: 'fyb-journal', name: 'FYB Branded Journal', cost: 7000, mandatory: false, description: 'Personalized Compound \'25 journal for you.' },
+  { id: 'movie-night', name: 'Movie Night', cost: 1500, mandatory: false, description: '' },
+  { id: 'sport-fiesta', name: 'Sport Fiesta', cost: 1500, mandatory: false, description: 'Friendly competition, fun games, and stress relief at the Main Bowl.' },
+  { id: 'class-dinner', name: 'Class Dinner', cost: 25000, mandatory: false, description: 'Final year dinner like no other. No need for too much talk. Come experience it first-hand.' },
+  { id: 'class-trip', name: 'Class Trip & Staycation', cost: 30000, mandatory: false, description: 'Relax, bond, and create memories outside campus.' },
+  { id: 'souvenirs', name: 'Souvenirs', cost: 8000, mandatory: false, description: 'Extra souvenirs and keepsakes for you.' },
+  { id: 'imperial-souvenirs', name: 'Imperial Souvenirs', cost: 12000, mandatory: false, description: 'Souvenir pack reserved for Imperial-inspired looks.' }
 ];
 
 const form = document.getElementById('item-form');
@@ -93,16 +102,19 @@ if (customItemsContainer) {
 
     const priceSpan = document.createElement('span');
     priceSpan.className = 'option-price';
-    priceSpan.textContent = `₦${item.cost.toLocaleString()}`;
+    if (!item.mandatory) {
+      priceSpan.textContent = `₦${item.cost.toLocaleString()}`;
+    }
 
     row.appendChild(nameSpan);
     row.appendChild(priceSpan);
 
     const desc = document.createElement('p');
     desc.className = 'option-description';
-    desc.textContent = item.mandatory
-      ? 'Automatically included so everyone stays coordinated.'
-      : 'Optional add-on. Toggle it to include in your look.';
+    desc.textContent = item.description ||
+      (item.mandatory
+        ? 'Automatically included so everyone stays coordinated.'
+        : 'Optional add-on. Select it to include in your look.');
 
     content.appendChild(row);
     content.appendChild(desc);
@@ -110,7 +122,7 @@ if (customItemsContainer) {
     if (item.mandatory) {
       const badge = document.createElement('span');
       badge.className = 'option-badge';
-      badge.textContent = 'Included';
+      badge.textContent = 'Mandatory';
       content.appendChild(badge);
     }
 
@@ -158,12 +170,12 @@ proceedBtn.addEventListener('click', () => {
     total
   };
 
-  // Toggle
+  // Switch view
   selectionSection.style.display = 'none';
   summarySection.style.display = 'block';
 });
 
-// Back, Save (use original URL), Share (same as packages)
+// Back, Save, Share (same as packages)
 backBtn.addEventListener('click', () => {
   selectionSection.style.display = 'block';
   summarySection.style.display = 'none';

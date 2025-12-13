@@ -10,6 +10,25 @@ const firstNameInput = document.getElementById('first-name');
 const lastNameInput = document.getElementById('last-name');
 const saveFeedback = document.getElementById('save-feedback');
 const shareFeedback = document.getElementById('share-feedback');
+const packageDetails = document.querySelectorAll('.package-detail');
+
+if (packageDetails.length) {
+  packageDetails.forEach(detail => {
+    const summary = detail.querySelector('summary');
+    if (!summary) return;
+    summary.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        if (detail.open) {
+          packageDetails.forEach(other => {
+            if (other !== detail) {
+              other.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+  });
+}
 
 const PACKAGE_SAVE_KEY = 'hasSavedPackage';
 const PACKAGE_SHARE_KEY = 'hasSharedPackage';
@@ -94,7 +113,7 @@ proceedBtn.addEventListener('click', () => {
     total
   };
 
-  // Toggle sections
+  // Switch sections
   selectionSection.style.display = 'none';
   summarySection.style.display = 'block';
 });
