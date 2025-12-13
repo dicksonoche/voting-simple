@@ -118,7 +118,7 @@ saveBtn.addEventListener('click', () => {
   const formData = new URLSearchParams();
   formData.append('payload', JSON.stringify(data));
 
-  fetch('PACKAGE_WEB_APP_URL_HERE', {  // Replace with your new package deployed URL
+  fetch('https://script.google.com/macros/s/AKfycbyPr4sEv4NO-MqOdmCyFv1sSdZ7qTGmRJpkU092T9vH5QrZ7p7ECiJJUt_LAICPbX-c/exec', {
     method: 'POST',
     body: formData
   })
