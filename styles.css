@@ -179,7 +179,7 @@ body {
 
 .package-detail[open] .package-list {
   margin-top: 4px;
-  max-height: 800px;
+  max-height: 1500px;
   opacity: 1;
   transform: translateY(0);
 }

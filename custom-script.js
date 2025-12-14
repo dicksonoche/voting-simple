@@ -8,10 +8,7 @@ const items = [
   { id: 'fyb-journal', name: 'FYB Branded Journal', cost: 7000, mandatory: false, description: 'Personalized Compound \'25 journal for you.' },
   { id: 'movie-night', name: 'Movie Night', cost: 1500, mandatory: false, description: '' },
   { id: 'sport-fiesta', name: 'Sport Fiesta', cost: 1500, mandatory: false, description: 'Friendly competition, fun games, and stress relief at the Main Bowl.' },
-  { id: 'class-dinner', name: 'Class Dinner', cost: 25000, mandatory: false, description: 'Final year dinner like no other. No need for too much talk. Come experience it first-hand.' },
-  { id: 'class-trip', name: 'Class Trip & Staycation', cost: 30000, mandatory: false, description: 'Relax, bond, and create memories outside campus.' },
-  { id: 'souvenirs', name: 'Souvenirs', cost: 8000, mandatory: false, description: 'Extra souvenirs and keepsakes for you.' },
-  { id: 'imperial-souvenirs', name: 'Imperial Souvenirs', cost: 12000, mandatory: false, description: 'Souvenir pack reserved for Imperial-inspired looks.' }
+  { id: 'class-dinner', name: 'Class Dinner', cost: 25000, mandatory: false, description: 'Final year dinner like no other. No need for too much talk. Come experience it first-hand.' }
 ];
 
 const form = document.getElementById('item-form');
