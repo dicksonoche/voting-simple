@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
 
 :root {
-  --bg-dark: #05071a;
-  --bg-card: rgba(10, 12, 35, 0.8);
-  --bg-muted: rgba(255, 255, 255, 0.05);
-  --text: #f8f8ff;
-  --text-muted: rgba(248, 248, 255, 0.7);
-  --accent: #ff6b9c;
-  --accent-2: #7c5dff;
-  --border: rgba(255, 255, 255, 0.15);
-  --gradient: linear-gradient(135deg, #7c5dff, #3fe5ff 60%);
+  --bg-dark: #022416;
+  --bg-card: rgba(3, 31, 19, 0.92);
+  --bg-muted: rgba(255, 255, 255, 0.08);
+  --text: #f7fff4;
+  --text-muted: rgba(247, 255, 244, 0.72);
+  --accent: #e4ff61;
+  --accent-2: #00c48c;
+  --border: rgba(228, 255, 97, 0.25);
+  --gradient: linear-gradient(135deg, #e4ff61, #00c48c 70%);
 }
 
 *,
@@ -22,7 +22,7 @@ body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
-  background-color: var(--bg-dark);
+  background: radial-gradient(circle at top, #0f6a37 0%, #032215 60%, #01120b 100%);
   min-height: 100vh;
 }
 
@@ -42,19 +42,19 @@ body {
 }
 
 .blob-one {
-  background: #6f5dff;
+  background: #00c48c;
   top: -120px;
   right: -120px;
 }
 
 .blob-two {
-  background: #19d0ff;
+  background: #e4ff61;
   top: 40vh;
   left: -180px;
 }
 
 .blob-three {
-  background: #ff6b9c;
+  background: #1c8c53;
   bottom: -160px;
   right: 20vw;
 }
@@ -96,15 +96,15 @@ body {
 
 .card-panel {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(228, 255, 97, 0.25);
   border-radius: 32px;
   padding: clamp(24px, 4vw, 40px);
-  box-shadow: 0 40px 100px rgba(4, 6, 24, 0.6);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(24px);
 }
 
 .info-panel {
-  background: rgba(8, 10, 25, 0.85);
+  background: rgba(5, 25, 16, 0.9);
 }
 
 .accent {
@@ -123,11 +123,12 @@ body {
 }
 
 .package-detail {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 196, 140, 0.35);
+  border-radius: 24px;
+  background: rgba(3, 18, 11, 0.6);
   padding: 0;
   overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
 .package-detail summary {
@@ -160,7 +161,7 @@ body {
 }
 
 .package-detail[open] summary {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 196, 140, 0.12);
 }
 
 .package-list {
@@ -271,7 +272,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(228, 255, 97, 0.2);
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -295,8 +296,8 @@ body {
   gap: 14px;
   border-radius: 24px;
   padding: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(228, 255, 97, 0.2);
+  background: rgba(2, 20, 12, 0.7);
   cursor: pointer;
   transition: border 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -310,9 +311,9 @@ body {
 }
 
 .option-card:hover {
-  border-color: rgba(127, 93, 255, 0.8);
+  border-color: rgba(228, 255, 97, 0.75);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(12, 16, 52, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
 }
 
 .option-card input[type="radio"],
@@ -321,7 +322,7 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   margin-top: 4px;
   position: relative;
   flex-shrink: 0;
@@ -349,8 +350,8 @@ body {
 
 .option-card input:checked {
   border-color: transparent;
-  background: rgba(127, 93, 255, 0.35);
-  box-shadow: 0 0 0 2px rgba(127, 93, 255, 0.4);
+  background: rgba(0, 196, 140, 0.35);
+  box-shadow: 0 0 0 2px rgba(0, 196, 140, 0.45);
 }
 
 .option-card input:checked::after {
@@ -394,7 +395,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(228, 255, 97, 0.2);
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -402,16 +403,16 @@ body {
 .helper-card {
   margin-top: 12px;
   border-radius: 20px;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(228, 255, 97, 0.35);
   padding: 18px;
   text-align: center;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(3, 18, 11, 0.5);
   font-size: 0.95rem;
 }
 
 .helper-card a {
-  color: #65fbd2;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
 }
@@ -428,9 +429,9 @@ body {
   margin-top: 16px;
   padding: 20px 24px;
   border-radius: 28px;
-  background: radial-gradient(circle at top, rgba(101, 251, 210, 0.15), rgba(20, 23, 53, 0.8));
-  border: 1px solid rgba(101, 251, 210, 0.35);
-  box-shadow: 0 20px 50px rgba(3, 10, 25, 0.65);
+  background: radial-gradient(circle at top, rgba(228, 255, 97, 0.2), rgba(3, 25, 15, 0.95));
+  border: 1px solid rgba(0, 196, 140, 0.45);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
   position: relative;
   overflow: hidden;
 }
@@ -448,7 +449,7 @@ body {
   margin: 0 0 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #65fbd2;
+  color: var(--accent);
 }
 
 .payment-info p {
@@ -467,12 +468,12 @@ body {
   margin: 16px 0 8px;
   padding: 18px 20px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 107, 156, 0.5);
-  background: rgba(255, 107, 156, 0.08);
+  border: 1px solid rgba(228, 255, 97, 0.5);
+  background: rgba(228, 255, 97, 0.12);
   color: var(--text);
   font-size: 1rem;
   position: relative;
-  box-shadow: 0 20px 50px rgba(255, 107, 156, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 196, 140, 0.18);
 }
 
 .notice-block p {
@@ -487,7 +488,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ff6b9c;
+  background: var(--accent);
 }
 
 .note-grid {
@@ -500,8 +501,9 @@ body {
 .info-card {
   border-radius: 24px;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 20, 12, 0.65);
+  border: 1px solid rgba(0, 196, 140, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .info-card ul {
@@ -526,25 +528,26 @@ body {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  color: #080a19;
-  background-image: linear-gradient(120deg, #f9ffca, #7c5dff 70%);
+  color: #022213;
+  background-image: linear-gradient(120deg, #f9ff95, #00c48c 80%);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
 }
 
 .fancy-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 40px rgba(124, 93, 255, 0.4);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
 }
 
 .fancy-btn.pill {
-  background-image: linear-gradient(135deg, #65fbd2, #7c5dff);
-  color: #02141c;
+  background-image: linear-gradient(135deg, #00c48c, #0f7a4c);
+  color: #f3ffe1;
 }
 
 .fancy-btn.outline {
   background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--accent);
+  border: 1px solid rgba(228, 255, 97, 0.45);
 }
 
 .ghost-btn {
