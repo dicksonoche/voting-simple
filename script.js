@@ -1,3 +1,12 @@
+// Obfuscated cost data to prevent inspection
+const costMap = new Map([
+  ['Vintage', 29000],
+  ['Prestige', 60000],
+  ['Imperial', 89000],
+  ['Male', 15000],
+  ['Female', 10000]
+]);
+
 const proceedBtn = document.getElementById('proceed-btn');
 const backBtn = document.getElementById('back-btn');
 const saveBtn = document.getElementById('save-btn');
@@ -91,9 +100,9 @@ proceedBtn.addEventListener('click', () => {
   }
 
   const packageName = selectedPackage.value;
-  const packageCost = parseInt(selectedPackage.dataset.cost);
+  const packageCost = costMap.get(packageName) || 0;
   const tradName = selectedTrad.value;
-  const tradCost = parseInt(selectedTrad.dataset.cost);
+  const tradCost = costMap.get(tradName) || 0;
   const total = packageCost + tradCost;
 
   // Display selections
