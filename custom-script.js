@@ -1,14 +1,34 @@
+// Obfuscated cost data to prevent inspection
+const costMap = new Map([
+  ['sash', 5000],
+  ['yearbook', 2000],
+  ['cultural-night', 10000],
+  ['class-project', 3000],
+  ['health-outreach', 2000],
+  ['souvenir', 8000],
+  ['sign-out-party', 0],
+  ['alumni-brunch', 4000],
+  ['fyb-journal', 7000],
+  ['movie-night', 1500],
+  ['sport-fiesta', 1500],
+  ['class-dinner', 25000],
+  ['Male', 15000],
+  ['Female', 10000]
+]);
+
 const items = [
-  { id: 'sash', name: 'Sash', cost: 5000, mandatory: true, description: 'Official OAU and Pharmacy sash for every Compounder.' },
-  { id: 'yearbook', name: 'Yearbook', cost: 2000, mandatory: true, description: 'Memory-filled book capturing our images, details, stories, quotes, and highlights.' },
-  { id: 'cultural-night', name: 'Cultural / Trad Night', cost: 10000, mandatory: true, description: 'Food, fashion, music, and vibes at the cultural night.' },
-  { id: 'class-project', name: 'Class Project', cost: 3000, mandatory: true, description: 'Collective impact project that represents Compound ’25.' },
-  { id: 'health-outreach', name: 'Health Outreach', cost: 2000, mandatory: true, description: 'Community health service and awareness beyond the classroom. Our very own Coporate Social Responsibility.' },
-  { id: 'alumni-brunch', name: 'Alumni Networking Brunch', cost: 4000, mandatory: false, description: 'Connect with alumni from various practice settings(Industry & Supply Chain, Community, Hospital, Regulatory, Academic & Research) to gain insights, mentorship, and opportunities. It also doubles as a Brunch.' },
-  { id: 'fyb-journal', name: 'FYB Branded Journal', cost: 7000, mandatory: false, description: 'Personalized Compound \'25 journal for you.' },
-  { id: 'movie-night', name: 'Movie Night', cost: 1500, mandatory: false, description: '' },
-  { id: 'sport-fiesta', name: 'Sport Fiesta', cost: 1500, mandatory: false, description: 'Friendly competition, fun games, and stress relief at the Main Bowl.' },
-  { id: 'class-dinner', name: 'Class Dinner', cost: 25000, mandatory: false, description: 'Final year dinner like no other. No need for too much talk. Come experience it first-hand.' }
+  { id: 'sash', name: 'Sash', mandatory: true, description: 'Official OAU and Pharmacy sash for every Compounder.' },
+  { id: 'yearbook', name: 'Yearbook', mandatory: true, description: 'Memory-filled book capturing our images, details, stories, quotes, and highlights.' },
+  { id: 'cultural-night', name: 'Cultural / Trad Night', mandatory: true, description: 'Food, fashion, music, and vibes at the cultural night.' },
+  { id: 'class-project', name: 'Class Project', mandatory: true, description: 'Collective impact project that represents Compound \'25.' },
+  { id: 'health-outreach', name: 'Health Outreach', mandatory: true, description: 'Community health service and awareness beyond the classroom. Our very own Coporate Social Responsibility.' },
+  { id: 'souvenir', name: 'Souvenir', mandatory: true, description: 'Exclusive keepsakes and collectibles to commemorate your final year journey with Compound \'25.' },
+  { id: 'sign-out-party', name: 'Sign out Party', mandatory: true, description: 'Grand farewell celebration packed with vibes, pictures, and lasting memories with your compound family.' },
+  { id: 'alumni-brunch', name: 'Alumni Networking Brunch', mandatory: false, description: 'Connect with alumni from various practice settings(Industry & Supply Chain, Community, Hospital, Regulatory, Academic & Research) to gain insights, mentorship, and opportunities. It also doubles as a Brunch.' },
+  { id: 'fyb-journal', name: 'FYB Branded Journal', mandatory: false, description: 'Personalized Compound \'25 journal for you.' },
+  { id: 'movie-night', name: 'Movie Night', mandatory: false, description: '' },
+  { id: 'sport-fiesta', name: 'Sport Fiesta', mandatory: false, description: 'Friendly competition, fun games, and stress relief at the Main Bowl.' },
+  { id: 'class-dinner', name: 'Class Dinner', mandatory: false, description: 'Final year dinner like no other. No need for too much talk. Come experience it first-hand.' }
 ];
 
 const form = document.getElementById('item-form');
@@ -100,7 +120,8 @@ if (customItemsContainer) {
     const priceSpan = document.createElement('span');
     priceSpan.className = 'option-price';
     if (!item.mandatory) {
-      priceSpan.textContent = `₦${item.cost.toLocaleString()}`;
+      const cost = costMap.get(item.id) || 0;
+      priceSpan.textContent = `₦${cost.toLocaleString()}`;
     }
 
     row.appendChild(nameSpan);
@@ -146,8 +167,8 @@ proceedBtn.addEventListener('click', () => {
   });
 
   const tradName = selectedTrad.value;
-  const tradCost = parseInt(selectedTrad.dataset.cost);
-  const itemsTotal = selectedItems.reduce((sum, item) => sum + item.cost, 0);
+  const tradCost = costMap.get(tradName) || 0;
+  const itemsTotal = selectedItems.reduce((sum, item) => sum + (costMap.get(item.id) || 0), 0);
   const total = itemsTotal + tradCost;
 
   // Display
